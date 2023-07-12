@@ -1,0 +1,7 @@
+.content {
+  width: 100vw;
+}
+.align-top {
+  height: calc(100vh - 100px);
+  overflowy: auto;
+}
