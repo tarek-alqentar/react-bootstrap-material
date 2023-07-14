@@ -3,5 +3,17 @@
 }
 .align-top {
   height: calc(100vh - 100px);
-  overflowy: auto;
+  overflow-y: auto;
+}
+.bg-img {
+  background-image: url("../../public/homeCover.png");
+  background-size: cover;
+}
+
+::-webkit-scrollbar {
+  display: none; /* لإخفاء السكرول في متصفحات دعمها */
+}
+img {
+  max-width: 100%;
+  height: 100%;
 }

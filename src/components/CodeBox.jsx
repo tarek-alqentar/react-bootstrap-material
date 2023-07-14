@@ -4,15 +4,18 @@ import { darcula } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { FaCopy } from "react-icons/fa";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import { useState } from "react";
+import React from "react";
 
 import "../assets/CodeBox.css";
 
-const CodeBox = ({ title, jsxCode, cssCode }) => {
+const CodeBox = ({ handleFunction, title, jsxCode, cssCode }) => {
   const [activeTab, setActiveTab] = useState(1);
   const [copy, setCopy] = useState(false);
+  const [showCode, setShowCode] = useState(false);
   const handleTabChange = (tabNumber) => {
     setActiveTab(tabNumber);
   };
+
   const handleCopy = () => {
     setCopy(true);
     setTimeout(() => {
@@ -24,15 +27,19 @@ const CodeBox = ({ title, jsxCode, cssCode }) => {
     <div className="code-box card">
       <div className="card-header">
         <h4 className="code-box-title">{title}</h4>
+        {React.createElement(handleFunction)}
+        <br />
         <button
-          className="btn btn-outline-primary"
+          className="btn btn-light"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#collapseExample"
           aria-expanded="false"
           aria-controls="collapseExample"
+          onClick={() => setShowCode(!showCode)}
         >
-          Show Code
+          {showCode ? "Hide " : "Show "}
+          <i className={`bi bi-arrow-${showCode ? "up" : "down"}-circle`}></i>
         </button>
       </div>
       <div className="card-body collapse" id="collapseExample">
