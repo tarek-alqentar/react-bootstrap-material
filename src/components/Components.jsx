@@ -8,12 +8,12 @@ import "../assets/Components.css";
 const Components = () => {
   return (
     <>
-      <div className="container  ms-0 ps-0 content">
+      <div className="container ms-0 ps-0 content">
         <div className="row">
           <div className="col-3 ms-0 ps-0">
             <Sidebar />
           </div>
-          <div className="col-9 mt-5 pt-4 content-container d-flex align-items-start align-top ">
+          <div className="col-9 mt-5 pt-4 content-container d-flex align-items-start align-top">
             <Routes>
               <Route path="Badge" element={<Badge />} />
               <Route path="Button" element={<Button />} />

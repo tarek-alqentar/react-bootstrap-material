@@ -21,7 +21,7 @@ const CodeBox = ({ title, jsxCode, cssCode }) => {
   };
 
   return (
-    <div className="code-box card">
+    <div className="code-box card mb-2">
       <div className="card-header">
         <h4 className="code-box-title">{title}</h4>
         <button

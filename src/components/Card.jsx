@@ -1,9 +1,7 @@
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { darcula } from "react-syntax-highlighter/dist/esm/styles/prism";
-import CopyToClipboard from "react-copy-to-clipboard";
+import CodeBox from "./CodeBox";
 
 const Card = () => {
-  const code = `
+  const codeJsx = `
 import { Route, Routes } from "react-router-dom";
 import Sidebar from "./Sidebar";
 import Badge from "./Badge";
@@ -34,18 +32,23 @@ const Components = () => {
 
 export default Components;
 `;
+  const codeCss = `.content {
+  width: 100vw;
+}
+.align-top {
+  height: calc(100vh - 100px);
+  overflowy: auto;
+}
+`;
 
   return (
     <>
-      <div style={{ width: "400px" }}>
-        <SyntaxHighlighter language="jsx" style={darcula}>
-          {code}
-        </SyntaxHighlighter>
-        <CopyToClipboard text={code}>
-          <div>
-            <button>Copy</button>
-          </div>
-        </CopyToClipboard>
+      <div className="container">
+        <CodeBox
+          title="JavaScript Code Example"
+          jsxCode={codeJsx}
+          cssCode={codeCss}
+        />
       </div>
     </>
   );
