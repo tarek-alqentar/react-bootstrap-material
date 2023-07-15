@@ -11,7 +11,7 @@ import React from "react";
 
 import "../assets/CodeBox.css";
 
-const CodeBox = ({ handleFunction, title, jsxCode }) => {
+const CodeBox = ({ id, handleFunction, title, jsxCode }) => {
   let activeTab = 1;
   const [copy, setCopy] = useState(false);
   const [showCode, setShowCode] = useState(false);
@@ -34,16 +34,16 @@ const CodeBox = ({ handleFunction, title, jsxCode }) => {
           className="btn btn-light"
           type="button"
           data-bs-toggle="collapse"
-          data-bs-target="#collapseExample"
+          data-bs-target={`#${id}`}
           aria-expanded="false"
-          aria-controls="collapseExample"
+          aria-controls={id}
           onClick={() => setShowCode(!showCode)}
         >
           {showCode ? "Hide " : "Show "}
           <i className={`bi bi-arrow-${showCode ? "up" : "down"}-circle`}></i>
         </button>
       </div>
-      <div className="card-body collapse" id="collapseExample">
+      <div className="card-body collapse" id={id}>
         <div className={`${activeTab === 1 ? "visible" : "hidden"} pt-2`}>
           <CopyToClipboard text={jsxCode} onCopy={handleCopy}>
             <button

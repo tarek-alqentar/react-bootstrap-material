@@ -10,9 +10,6 @@ const Button = () => {
         <button className="btn btn-secondary m-2" type="button">
           secondary
         </button>
-        <button className="btn btn-tertiary m-2" type="button">
-          tertiary
-        </button>
         <button className="btn btn-success m-2" type="button">
           success
         </button>
@@ -35,6 +32,40 @@ const Button = () => {
     );
   };
 
+  const OutlineColorButton = () => {
+    return (
+      <>
+        <button type="button" className="btn btn-outline-primary m-2">
+          Primary
+        </button>
+        <button type="button" className="btn btn-outline-secondary m-2">
+          Secondary
+        </button>
+        <button type="button" className="btn btn-outline-tertiary m-2">
+          Tertiary
+        </button>
+        <button type="button" className="btn btn-outline-success m-2">
+          Success
+        </button>
+        <button type="button" className="btn btn-outline-danger m-2">
+          Danger
+        </button>
+        <button type="button" className="btn btn-outline-warning m-2">
+          Warning
+        </button>
+        <button type="button" className="btn btn-outline-info m-2">
+          Info
+        </button>
+        <button type="button" className="btn btn-outline-light m-2">
+          Light
+        </button>
+        <button type="button" className="btn btn-outline-dark m-2">
+          Dark
+        </button>
+      </>
+    );
+  };
+
   const codeFullColor = `  //primary button 
   <button className="btn btn-primary" type="button">
     primary
@@ -43,10 +74,6 @@ const Button = () => {
   <button className="btn btn-secondary" type="button">
     secondary
   </button>
-  //tertiary button
-  <button className="btn btn-tertiary m-2" type="button">
-    tertiary
-   </button>
   //success button 
   <button className="btn btn-success" type="button">
     success
@@ -72,12 +99,56 @@ const Button = () => {
     light
   </button>`;
 
+  const codeOutlineColor = `
+   //Primary button
+   <button type="button" className="btn btn-outline-primary">
+     Primary
+   </button>
+   //Secondary button
+   <button type="button" className="btn btn-outline-secondary">
+     Secondary
+   </button>
+   //Tertiary button
+   <button type="button" className="btn btn-outline-tertiary">
+     Tertiary
+   </button>
+   //Success button
+   <button type="button" className="btn btn-outline-success">
+     Success
+   </button>
+   //Danger button
+   <button type="button" className="btn btn-outline-danger">
+     Danger
+   </button>
+   <button type="button" className="btn btn-outline-warning">
+     Warning
+   </button>
+   //Info button
+   <button type="button" className="btn btn-outline-info">
+     Info
+   </button>
+   //Light button
+   <button type="button" className="btn btn-outline-light">
+     Light
+   </button>
+   //Dark button
+   <button type="button" className="btn btn-outline-dark">
+     Dark
+   </button>`;
+
   return (
     <div className="container">
       <CodeBox
+        id="FullColorButton"
         handleFunction={FullColorButton}
         title="Full color button"
         jsxCode={codeFullColor}
+      />
+      <CodeBox
+        id="OutlineColorButton"
+        handleFunction={OutlineColorButton}
+        title="Outline color button"
+        jsxCode={codeOutlineColor}
       />
     </div>
   );
