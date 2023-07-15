@@ -11,10 +11,13 @@ import React from "react";
 
 import "../assets/CodeBox.css";
 
-const CodeBox = ({ handleFunction, title, jsxCode }) => {
-  let activeTab = 1;
+const CodeBox = ({ handleFunction, title, jsxCode, cssCode }) => {
+  const [activeTab, setActiveTab] = useState(1);
   const [copy, setCopy] = useState(false);
   const [showCode, setShowCode] = useState(false);
+  const handleTabChange = (tabNumber) => {
+    setActiveTab(tabNumber);
+  };
 
   const handleCopy = () => {
     setCopy(true);
@@ -44,6 +47,24 @@ const CodeBox = ({ handleFunction, title, jsxCode }) => {
         </button>
       </div>
       <div className="card-body collapse" id="collapseExample">
+        <ul className="nav nav-tabs">
+          <li className="nav-item">
+            <a
+              className={`nav-link tap ${activeTab === 1 ? "active" : ""}`}
+              onClick={() => handleTabChange(1)}
+            >
+              JSX
+            </a>
+          </li>
+          <li className="nav-item">
+            <a
+              className={`nav-link tap ${activeTab === 2 ? "active" : ""}`}
+              onClick={() => handleTabChange(2)}
+            >
+              CSS
+            </a>
+          </li>
+        </ul>
         <div className={`${activeTab === 1 ? "visible" : "hidden"} pt-2`}>
           <CopyToClipboard text={jsxCode} onCopy={handleCopy}>
             <button
@@ -61,6 +82,25 @@ const CodeBox = ({ handleFunction, title, jsxCode }) => {
             className="code-box-content"
           >
             {jsxCode}
+          </SyntaxHighlighter>
+        </div>
+        <div className={`${activeTab === 2 ? "visible" : "hidden"} pt-2`}>
+          <CopyToClipboard text={cssCode} onCopy={handleCopy}>
+            <button
+              type="button"
+              className={`btn ${
+                copy ? "btn-outline-success" : "btn-outline-primary"
+              }`}
+            >
+              {copy ? "Copied" : <FaCopy />}
+            </button>
+          </CopyToClipboard>
+          <SyntaxHighlighter
+            language="css"
+            style={materialLight}
+            className="code-box-content"
+          >
+            {cssCode}
           </SyntaxHighlighter>
         </div>
       </div>

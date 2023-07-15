@@ -1,7 +1,7 @@
 import CodeBox from "./CodeBox";
 
 const Button = () => {
-  const CodeBoxButton = () => {
+  const FullColorButton = () => {
     return (
       <>
         <button className="btn btn-primary m-2" type="button">
@@ -9,6 +9,9 @@ const Button = () => {
         </button>
         <button className="btn btn-secondary m-2" type="button">
           secondary
+        </button>
+        <button className="btn btn-tertiary m-2" type="button">
+          tertiary
         </button>
         <button className="btn btn-success m-2" type="button">
           success
@@ -18,6 +21,9 @@ const Button = () => {
         </button>
         <button className="btn btn-danger m-2" type="button">
           danger
+        </button>
+        <button className="btn btn-info m-2" type="button">
+          info
         </button>
         <button className="btn btn-dark m-2" type="button">
           dark
@@ -29,7 +35,7 @@ const Button = () => {
     );
   };
 
-  const code1 = `  //primary button 
+  const codeFullColor = `  //primary button 
   <button className="btn btn-primary" type="button">
     primary
   </button>
@@ -37,6 +43,10 @@ const Button = () => {
   <button className="btn btn-secondary" type="button">
     secondary
   </button>
+  //tertiary button
+  <button className="btn btn-tertiary m-2" type="button">
+    tertiary
+   </button>
   //success button 
   <button className="btn btn-success" type="button">
     success
@@ -49,6 +59,10 @@ const Button = () => {
   <button className="btn btn-danger" type="button">
     danger
   </button>
+  //info button
+  <button className="btn btn-info m-2" type="button">
+    info 
+   </button>
   //dark button 
   <button className="btn btn-dark" type="button">
     dark
@@ -57,17 +71,13 @@ const Button = () => {
   <button className="btn btn-light" type="button">
     light
   </button>`;
-  const code2 = `.para {
-  width: 100%;
-}`;
 
   return (
     <div className="container">
       <CodeBox
-        handleFunction={CodeBoxButton}
-        title="JavaScript Code Example"
-        jsxCode={code1}
-        cssCode={code2}
+        handleFunction={FullColorButton}
+        title="Full color button"
+        jsxCode={codeFullColor}
       />
     </div>
   );
