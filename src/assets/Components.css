@@ -5,10 +5,10 @@
   height: calc(100vh - 100px);
   overflow-y: auto;
 }
-.bg-img {
+/* .bg-img {
   background-image: url("../../public/homeCover.png");
   background-size: cover;
-}
+} */
 
 ::-webkit-scrollbar {
   display: none; /* لإخفاء السكرول في متصفحات دعمها */
